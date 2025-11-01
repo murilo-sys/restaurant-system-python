@@ -1,12 +1,12 @@
 import os
 import time
 
-from services import restaurante_services
+from services import restaurante_service
 
 nome = input("Digite o nome do restaurante \n")
 os.system("cls")
 
-restaurante = restaurante_services.Restaurante(nome)
+restaurante = restaurante_service.Restaurante(nome)
 
 while True:
     os.system("cls")
@@ -24,9 +24,21 @@ while True:
             preco_produto = float(input("Insira o valor do produto\nR$"))
             os.system("cls")
 
-            if restaurante.registrarVenda(preco_produto):
+            if restaurante.registrar_venda(preco_produto):
                 print(f"Prato registrado no valor de R${preco_produto}")
             else:
                  print("Valor inválido, favor inserir um valor maior que 0")
             time.sleep(2)
 
+        case 2:
+            restaurante.resultados()
+            input("\nPressione qualquer tecla para continuar\n")
+        
+        case 9:
+            print("Você escolheu sair")
+            time.sleep(2)
+            break
+
+        case _:
+            print("Opção inválida")
+            time.sleep(2)
