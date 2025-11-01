@@ -5,13 +5,12 @@ class Restaurante:
         self.rendimento = 0.0
         self.clientes = 0
 
-    def registrar_venda(self, preco_produto: float) -> bool:
+    def registrar_venda(self, preco_produto: float) -> tuple[bool, str]:
         if preco_produto > 0:
             self.rendimento += preco_produto
             self.clientes += 1
-            return True
-        else:
-            return False
+            return True, f"Prato registrado no valor de R${preco_produto}"
+        return False, "Valor inválido, favor inserir um valor maior que 0"
 
     def resultados (self):
         print(f" Resultados ".center(25,"="), 
