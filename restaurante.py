@@ -16,11 +16,11 @@ while True:
     "[1] Registrar venda\n"
     "[2] Visualizar resultados\n"
     "[9] Sair\n"
-    "Sua resposta: "))
+    "Sua opção: "))
     
     os.system("cls")
     match opcao:
         case 1:
-            preco_produto = float(input("Insira o preço do seu produto\nR$"))
+            preco_produto = float(input("Insira o preço do produto\nR$"))
             restaurante.registrarVenda(preco_produto)
 
