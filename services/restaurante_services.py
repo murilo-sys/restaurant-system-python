@@ -8,6 +8,7 @@ class Restaurante:
     def registrarVenda(self, preco_produto: float) -> bool:
         if preco_produto > 0:
             self.rendimento += preco_produto
+            self.clientes += 1
             return True
         else:
             return False
