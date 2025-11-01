@@ -8,8 +8,6 @@ class Restaurante:
     def registrarVenda(self, preco_produto: float) -> bool:
         if preco_produto > 0:
             self.rendimento += preco_produto
-            print(f"Prato registrado no valor de R${preco_produto}")
             return True
         else:
-            print("Valor inválido, favor inserir um valor maior que 0")
             return False

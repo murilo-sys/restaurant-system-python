@@ -21,6 +21,9 @@ while True:
     os.system("cls")
     match opcao:
         case 1:
-            preco_produto = float(input("Insira o preço do produto\nR$"))
-            restaurante.registrarVenda(preco_produto)
+            preco_produto = float(input("Insira o valor do produto\nR$"))
+            if restaurante.registrarVenda(preco_produto):
+                print(f"Prato registrado no valor de R${preco_produto}")
+            else:
+                 print("Valor inválido, favor inserir um valor maior que 0")
 
