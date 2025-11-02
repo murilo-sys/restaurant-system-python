@@ -9,10 +9,10 @@ class Restaurante:
         if preco_produto > 0:
             self.rendimento += preco_produto
             self.clientes += 1
-            return True, f"Prato registrado no valor de R${preco_produto}"
+            return True, f"Prato registrado no valor de R${preco_produto:.2f}"
         return False, "Valor inválido, favor inserir um valor maior que 0"
 
     def resultados (self):
         print(f" Resultados ".center(25,"="), 
-              f"\nVocê vendeu R${self.rendimento}"
+              f"\nVocê vendeu R${self.rendimento:.2f}"
               f"\nVocê atendeu {self.clientes} cliente(s)")
