@@ -4,7 +4,7 @@ import time
 from services import restaurante_service
 
 def limpar_tela():
-    os.system("cls")
+    os.system("cls" if os.name == "nt" else "clear")
 
 nome = input("Digite o nome do restaurante \n")
 restaurante = restaurante_service.Restaurante(nome)
