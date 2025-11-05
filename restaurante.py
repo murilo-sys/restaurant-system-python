@@ -25,11 +25,17 @@ while True:
     limpar_tela()
     match opcao:
         case "1":
-            preco_produto = float(input("Insira o valor do produto\nR$"))
             limpar_tela()
-            sucess, msg = restaurante.registrar_venda(preco_produto)
-            print(msg)
-            time.sleep(2)
+            try:
+                preco_produto = float(input("Insira o valor do produto\nR$"))
+                sucess, msg = restaurante.registrar_venda(preco_produto)
+                limpar_tela()
+                print(msg)
+                time.sleep(2)
+            except ValueError:
+                limpar_tela()
+                print("Valor inválido. Digite um número.")
+                time.sleep(2)
 
         case "2":
             restaurante.resultados()
